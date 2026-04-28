@@ -2,8 +2,8 @@ name: Steam Scraper
 
 on:
   schedule:
-    - cron: "0 */6 * * *"   # runs every 6 hours
-  workflow_dispatch:          # allows manual trigger from GitHub UI
+    - cron: "0 8 * * *"   # runs every day at 8:00 AM UTC
+  workflow_dispatch:        # allows manual trigger from GitHub UI
 
 jobs:
   scrape:
@@ -19,7 +19,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests pandas supabase
+        run: pip install requests pandas supabase python-dotenv
 
       - name: Run scraper
         env:
