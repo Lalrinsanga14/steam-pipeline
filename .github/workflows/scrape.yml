@@ -23,6 +23,6 @@ jobs:
 
       - name: Run scraper
         env:
-          SUPABASE_URL: "https://fnldzkdgrxjtljretgda.supabase.co"
-          SUPABASE_KEY: "sb_publishable_viHBsJ0z28PcAcKahfClPA_UTtvBfYt"
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
         run: python scraper.py
